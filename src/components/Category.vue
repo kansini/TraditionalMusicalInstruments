@@ -1,48 +1,9 @@
 <script setup lang="ts">
-import {reactive} from "vue";
+import {onMounted, reactive} from "vue";
 import {ICategory} from "@/types/data";
+import {getList} from "@/api/getList";
 
-const categoryList = reactive<ICategory[]>([
-  {
-    id: 1,
-    name: '丝',
-    pinyin: 'sī'
-  },
-  {
-    id: 2,
-    name: '竹',
-    pinyin: 'zhú'
-  },
-  {
-    id: 3,
-    name: '木',
-    pinyin: 'mù'
-  },
-  {
-    id: 4,
-    name: '石',
-    pinyin: 'shí'
-  },
-  {
-    id: 5,
-    name: '金',
-    pinyin: 'jĩn'
-  },
-  {
-    id: 6,
-    name: '土',
-    pinyin: 'tǔ'
-  },
-  {
-    id: 7,
-    name: '匏',
-    pinyin: 'páo'
-  },
-  {
-    id: 8,
-    name: '革',
-    pinyin: 'gé'
-  }])
+const categoryList = reactive<ICategory[]>([])
 const emit = defineEmits(['click', 'mouseover', 'mouseleave'])
 const onMouseover = (item: ICategory) => {
   emit('mouseover', item)
@@ -53,6 +14,14 @@ const onClick = (item: ICategory) => {
 const onMouseleave = () => {
   emit('mouseleave')
 }
+const getData = () => {
+  getList('/category.json')
+      .then((res: any) => categoryList.push(...res.data))
+
+}
+onMounted(() => {
+  getData()
+})
 </script>
 
 <template>
@@ -85,7 +54,7 @@ const onMouseleave = () => {
     justify-content: space-evenly;
 
     .tmi-category-item {
-      font-size: 48px;
+      font-size: 32px;
       color: $primary-color;
       cursor: pointer;
     }

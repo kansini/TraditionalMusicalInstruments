@@ -1,0 +1,148 @@
+[
+  {
+    "id": 0,
+    "name": "金",
+    "pinyin": "jĩn",
+    "instruments": [
+      {
+        "id": 1,
+        "name": "鐘",
+        "pinyin": "zhōng"
+      },
+      {
+        "id": 2,
+        "name": "镈",
+        "pinyin": "bó"
+      },
+      {
+        "id": 3,
+        "name": "鉦",
+        "pinyin": "zhēng"
+      },
+      {
+        "id": 4,
+        "name": "鐸",
+        "pinyin": "duó"
+      },
+      {
+        "id": 5,
+        "name": "鐃",
+        "pinyin": "náo"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "石",
+    "pinyin": "shí",
+    "instruments": [
+      {
+        "id": 1,
+        "name": "罄",
+        "pinyin": "qìng"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "丝",
+    "pinyin": "sī",
+    "instruments": [
+      {
+        "id": 1,
+        "name": "琴",
+        "pinyin": "qín"
+      },
+      {
+        "id": 2,
+        "name": "瑟",
+        "pinyin": "sè"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "竹",
+    "pinyin": "zhú",
+    "instruments": [
+      {
+        "id": 1,
+        "name": "簫",
+        "pinyin": "xiāo"
+      },
+      {
+        "id": 2,
+        "name": "箎",
+        "pinyin": "chí"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "匏",
+    "pinyin": "páo",
+    "instruments": [
+      {
+        "id": 1,
+        "name": "笙",
+        "pinyin": "shēng"
+      },
+      {
+        "id": 2,
+        "name": "竽",
+        "pinyin": "yú"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "土",
+    "pinyin": "tǔ",
+    "instruments": [
+      {
+        "id": 1,
+        "name": "塤",
+        "pinyin": "xũn"
+      },
+      {
+        "id": 2,
+        "name": "缶",
+        "pinyin": "fǒu"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "革",
+    "pinyin": "gé",
+    "instruments": [
+      {
+        "id": 1,
+        "name": "鼗",
+        "pinyin": "táo"
+      },
+      {
+        "id": 2,
+        "name": "雷鼓",
+        "pinyin": "léi gǔ"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "木",
+    "pinyin": "mù",
+    "instruments": [
+      {
+        "id": 1,
+        "name": "柷",
+        "pinyin": "zhù"
+      },
+      {
+        "id": 2,
+        "name": "敔",
+        "pinyin": "yǔ"
+      }
+    ]
+  }
+]
