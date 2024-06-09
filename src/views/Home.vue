@@ -7,9 +7,11 @@ import {ICategory} from "@/types/data";
 const cursorSize = ref('large')
 const cursorInnerText = ref('樂')
 const onMouseover = (item: ICategory) => {
+  cursorSize.value = 'small'
   cursorInnerText.value = item.pinyin
 }
 const onMouseleave = () => {
+  cursorSize.value = 'large'
   cursorInnerText.value = '樂'
 }
 </script>
@@ -20,7 +22,7 @@ const onMouseleave = () => {
         @mouseover="onMouseover"
         @mouseleave="onMouseleave"
     />
-    <div class="title">中/國/傳/統/樂/器</div>
+    <div class="title">/中/國/傳/統/樂/器/</div>
   </div>
 </template>
 <style lang="scss" scoped>

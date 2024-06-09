@@ -43,9 +43,12 @@ const categoryList = reactive<ICategory[]>([
     name: '革',
     pinyin: 'gé'
   }])
-const emit = defineEmits(['mouseover', 'mouseleave'])
+const emit = defineEmits(['click', 'mouseover', 'mouseleave'])
 const onMouseover = (item: ICategory) => {
   emit('mouseover', item)
+}
+const onClick = (item: ICategory) => {
+  emit('click', item)
 }
 const onMouseleave = () => {
   emit('mouseleave')
@@ -58,6 +61,7 @@ const onMouseleave = () => {
       <div class="tmi-category-item"
            v-for="item in categoryList"
            :key="item.id"
+           @click="onClick(item)"
            @mouseenter="onMouseover(item)"
            @mouseleave="onMouseleave"
       >

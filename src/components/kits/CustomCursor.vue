@@ -90,14 +90,13 @@ onUnmounted(() => {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    background: $primary-color;
     color: rgba(255, 255, 255, 1);
     will-change: transform;
     opacity: 0;
-    font-size: 14px;
+    font-size: 18px;
     transition: width ease .6s, height ease .6s, color ease .4s;
     overflow: hidden;
     white-space: nowrap;
