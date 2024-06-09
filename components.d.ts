@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Category: typeof import('./src/components/Category.vue')['default']
     CustomCursor: typeof import('./src/components/kits/CustomCursor.vue')['default']
     CustomCursor1: typeof import('./src/components/kits/CustomCursor1.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
