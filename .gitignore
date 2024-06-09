@@ -23,4 +23,4 @@ yarn-error.log*
 *.docx
 *.pptx
 /references
-
+/prototype

@@ -20,6 +20,7 @@ const cursorSize = ref('large')
   justify-content: center;
   width: 100%;
   height: 100vh;
+  background: $tmi-bg;
 
   .title {
     font-size: 32px;
