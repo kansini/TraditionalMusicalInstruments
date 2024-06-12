@@ -18,7 +18,12 @@ const onClick = () => {
 </script>
 
 <template>
-  <a class="github-icon" href="https://github.com/kansini/TraditionalMusicalInstruments" target="_blank">
+  <a
+      class="github-icon"
+      href="https://github.com/kansini/TraditionalMusicalInstruments"
+      target="_blank"
+      :style="{width: `${size}px`, height: `${size}px`}"
+  >
     <svg
         @mouseenter="emit('mouseenter')"
         @click="onClick"
@@ -35,7 +40,6 @@ const onClick = () => {
 </template>
 <style lang="scss" scoped>
 .github-icon {
-  mix-blend-mode: difference;
   transition: all ease-in .3s;
   cursor: pointer;
 

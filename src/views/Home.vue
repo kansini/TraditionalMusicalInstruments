@@ -1,15 +1,17 @@
 <script lang="ts" setup>
-import {reactive, ref} from "vue";
+import {ref} from "vue";
 import TmiCategory from "@/components/Category.vue";
 import TmiCursor from "@/components/kits/CustomCursor.vue";
-import TmiMenuBar from "@/components/MenuBar.vue"
+import TmiMenuBar from "@/components/MenuBar.vue";
 import {ICategory} from "@/types/data";
+import {bgColors} from "@/resource"
 
 const cursorSize = ref('large')
 const cursorInnerText = ref('樂')
 const bgIndex = ref(0)
-const bgColors = reactive(["#DFD7C2", "#C6BEB1", "#b1d5c8", "#80a492", "#A88787", "#9E8C6B", "#CC5D20", "#BEA89D"])
+const playAudio = ref(false)
 const onMouseover = (item: ICategory) => {
+  playAudio.value = true
   cursorSize.value = 'small'
   cursorInnerText.value = item.pinyin
   bgIndex.value = item.id
@@ -48,7 +50,7 @@ const onMouseleave = () => {
   padding: 0 64px;
   height: 100vh;
   background: $tmi-bg;
-  transition: all ease .5s;
+  transition: all ease-in-out 1s;
 
   .title {
     font-size: 18px;

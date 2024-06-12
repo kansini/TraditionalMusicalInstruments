@@ -13,9 +13,11 @@
   "dependencies": {
     "@types/lodash": "^4.14.202",
     "@vueuse/core": "^8.2.0",
+    "@vueuse/motion": "^2.2.3",
     "axios": "^1.7.2",
     "gsap": "^3.12.5",
     "lodash": "^4.17.21",
+    "lottie-web": "^5.12.2",
     "pinia": "^2.1.7",
     "sass": "^1.77.2",
     "vue": "^3.4.21",

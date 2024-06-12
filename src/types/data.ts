@@ -9,5 +9,5 @@ export interface ICategory {
     id: number;
     name: string;
     pinyin: string;
-    instruments?: IInstrument[];
+    instruments: IInstrument[];
 }

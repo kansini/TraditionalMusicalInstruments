@@ -7,6 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Animation: typeof import('./src/components/kits/Animation.vue')['default']
+    Audio: typeof import('./src/components/kits/Audio.vue')['default']
     Category: typeof import('./src/components/Category.vue')['default']
     CustomCursor: typeof import('./src/components/kits/CustomCursor.vue')['default']
     FullscreenTrigger: typeof import('./src/components/kits/FullscreenTrigger.vue')['default']
@@ -14,5 +16,6 @@ declare module 'vue' {
     MenuBar: typeof import('./src/components/MenuBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SubCategory: typeof import('./src/components/SubCategory.vue')['default']
   }
 }

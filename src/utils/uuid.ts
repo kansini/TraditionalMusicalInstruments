@@ -1,4 +1,4 @@
-const uuid = (length: number = 5,pre?:string): string => {
+const uuid = (pre?: string, length: number = 5): string => {
     let id: string = ''
     Array.from({length}).some(() => {
         id += Math.random().toString(36).slice(2)

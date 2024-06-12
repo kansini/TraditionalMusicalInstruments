@@ -1,6 +1,6 @@
 [
   {
-    "id": 0,
+    "id": 1,
     "name": "金",
     "pinyin": "jĩn",
     "instruments": [
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": 1,
+    "id": 2,
     "name": "石",
     "pinyin": "shí",
     "instruments": [
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "name": "丝",
     "pinyin": "sī",
     "instruments": [
@@ -61,24 +61,29 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "name": "竹",
     "pinyin": "zhú",
     "instruments": [
       {
         "id": 1,
+        "name": "笛",
+        "pinyin": "dí"
+      },
+      {
+        "id": 2,
         "name": "簫",
         "pinyin": "xiāo"
       },
       {
-        "id": 2,
+        "id": 3,
         "name": "箎",
         "pinyin": "chí"
       }
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "name": "匏",
     "pinyin": "páo",
     "instruments": [
@@ -95,7 +100,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 6,
     "name": "土",
     "pinyin": "tǔ",
     "instruments": [
@@ -112,7 +117,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 7,
     "name": "革",
     "pinyin": "gé",
     "instruments": [
@@ -129,7 +134,7 @@
     ]
   },
   {
-    "id": 7,
+    "id": 8,
     "name": "木",
     "pinyin": "mù",
     "instruments": [
