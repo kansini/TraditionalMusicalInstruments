@@ -1,24 +1,12 @@
-import { InjectionKey } from "vue";
-import { createStore, Store, useStore as baseUseStore } from 'vuex';
-// @ts-ignore
-import languageModule, { Language } from "./language"
+import {defineStore} from "pinia";
 
-
-
-export interface RootState {
-  language: Language;
-}
-
-export const key: InjectionKey<Store<RootState>> = Symbol();
-
-
-
-export const store = createStore<RootState>({
-  modules: {
-    language: languageModule,
-  }
-});
-
-export function useStore() {
-  return baseUseStore(key);
-}
+export const useMuteStore = defineStore('mute', {
+    state: () => ({
+        isMute: false
+    }),
+    actions: {
+        toggleMute() {
+            this.isMute = !this.isMute;
+        }
+    }
+})

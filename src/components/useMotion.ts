@@ -19,17 +19,17 @@ export default function () {
         initial: {
             opacity: 0,
             blur: 20,
-            y: -80,
+            y: -60,
         },
         enter: {
             opacity: 1,
             blur: 0,
-            y: 0,
+            y: 0
         },
         leave: {
             opacity: 0,
             blur: 20,
-            y: -32,
+            y: -40,
         }
     })
     return {

@@ -38,12 +38,12 @@ const init = () => {
     container: cv,
     renderer: 'canvas',
     loop: true,
-    autoplay: false,
+    autoplay: true,
     path: `./aniList/${props.name}.json`
   })
 }
 const emit = defineEmits(['mouseenter', 'click'])
-const isPlay = ref(false)
+const isPlay = ref(true)
 const onClick = () => {
   isPlay.value = !isPlay.value
   emit('click', isPlay.value)

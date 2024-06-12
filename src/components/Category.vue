@@ -6,20 +6,20 @@ import Audio from "@/components/kits/Audio.vue";
 import {audios} from "@/resource";
 import SubCategory from "./SubCategory.vue";
 import userMotion from "./useMotion";
+import {useMuteStore} from "@/store";
+
+const state = useMuteStore();
 
 const {motionOption} = userMotion()
 const categoryList = reactive<ICategory[]>([])
 const emit = defineEmits(['click', 'mouseover', 'mouseleave'])
 const onMouseover = (item: ICategory) => {
   current.value = item.id
-  console.log(player.value, audios[item.id])
-  playAudio()
-  // playAudio.value = true
+  // playAudio()
   emit('mouseover', item)
 }
 
 const onMouseleave = () => {
-  pauseAudio()
   emit('mouseleave')
 }
 const getData = () => {
@@ -29,7 +29,8 @@ const getData = () => {
 }
 const player = ref()
 const playAudio = () => {
-  player.value[0].play();
+  player.value[0].play().catch(() => {
+  });
 };
 
 const pauseAudio = () => {
@@ -40,12 +41,16 @@ const showSubCate = ref(false)
 const subCateData = reactive([])
 const subCateTitle = ref('')
 const onClick = (item: ICategory) => {
+  playAudio()
   emit('click', item)
   showSubCate.value = true
   subCateTitle.value = item.name
   Object.assign(subCateData, item.instruments)
 }
-
+const onCloseSubCate = () => {
+  showSubCate.value = false
+  pauseAudio()
+}
 onMounted(() => {
   getData()
 })
@@ -56,7 +61,7 @@ onMounted(() => {
       v-if="showSubCate"
       :data="subCateData"
       :title="subCateTitle"
-      @close="showSubCate = false"
+      @close="onCloseSubCate"
       @onMouseover="onMouseover"
       @mouseleave="onMouseleave"
   />
@@ -73,13 +78,15 @@ onMounted(() => {
            @mouseenter="onMouseover(item)"
            @mouseleave="onMouseleave"
       >
-        <audio ref="player" autoplay v-if="current === item.id">
-          <source :src="`./audio/${audios[item.id]}.mp3`" type="audio/mp3">
-        </audio>
         <div class="tmi-category-item-name">{{ item.name }}</div>
       </div>
     </div>
   </div>
+  <template v-for="item in categoryList">
+    <audio ref="player" autoplay :muted="state.isMute" v-if="current === item.id">
+      <source :src="`./audio/${audios[item.id]}.mp3`" type="audio/mp3">
+    </audio>
+  </template>
 </template>
 
 <style scoped lang="scss">
