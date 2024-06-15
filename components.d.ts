@@ -14,6 +14,7 @@ declare module 'vue' {
     CustomCursor: typeof import('./src/components/kits/CustomCursor.vue')['default']
     FullscreenTrigger: typeof import('./src/components/kits/FullscreenTrigger.vue')['default']
     GithubIcon: typeof import('./src/components/kits/GithubIcon.vue')['default']
+    Info: typeof import('./src/components/kits/Info.vue')['default']
     Item: typeof import('./src/components/category/Item.vue')['default']
     MenuBar: typeof import('./src/components/MenuBar.vue')['default']
     Modal: typeof import('./src/components/kits/Modal.vue')['default']

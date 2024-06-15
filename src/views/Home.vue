@@ -3,7 +3,6 @@ import {ref} from "vue";
 import TmiCategory from "@/components/category/Category.vue";
 import TmiCursor from "@/components/kits/CustomCursor.vue";
 import TmiMenuBar from "@/components/MenuBar.vue";
-// import TmiModal from "@/components/kits/Modal.vue"
 import {bgColors} from "@/resource";
 import {useCursorStore, useBgStore} from "@/store";
 import {IInstrument} from "@/types/data";
@@ -32,10 +31,6 @@ const onclickItem = (item: IInstrument) => {
     <tmi-category @click-item="onclickItem"/>
     <div class="title">\中\國\傳\統\樂\器\</div>
   </div>
-<!--  <tmi-modal-->
-<!--      v-model:show="showDetail"-->
-<!--      :title="detailTitle"-->
-<!--  />-->
 </template>
 <style lang="scss" scoped>
 .home {
@@ -45,7 +40,6 @@ const onclickItem = (item: IInstrument) => {
   width: 100%;
   padding: 0 64px;
   height: 100vh;
-  background: $tmi-bg;
   transition: all ease-in-out 1s;
 
   .title {

@@ -98,7 +98,7 @@ onUnmounted(() => {
     color: rgba(255, 255, 255, 1);
     will-change: transform;
     opacity: 0;
-    font-size: 14px;
+    font-size: 18px;
     transition: width ease .6s, height ease .6s, color ease .4s;
     overflow: hidden;
     white-space: nowrap;

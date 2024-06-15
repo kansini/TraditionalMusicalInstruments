@@ -3,7 +3,7 @@ export interface IInstrument {
     name: string;
     pinyin: string;
     image: string;
-    desc?: string;
+    desc?: string[];
 
 }
 

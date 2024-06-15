@@ -43,3 +43,13 @@ export const useCurrentStore = defineStore('current', {
         }
     }
 })
+export const useFullScreenStore = defineStore('fullScreen', {
+    state: () => ({
+        isFullScreen: false
+    }),
+    actions: {
+        toggleFullScreen() {
+            this.isFullScreen = !this.isFullScreen;
+        }
+    }
+})

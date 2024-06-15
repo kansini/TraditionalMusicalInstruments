@@ -128,12 +128,20 @@ onMounted(() => {
       transition: all 0.3s ease-in-out;
 
       .tmi-category-item-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
         transition: all 0.3s ease-in-out;
       }
 
       &:hover {
         .tmi-category-item-name {
-          transform: scale(2);
+          transform: scale(1.5);
+          color: $color-light;
+          background: $primary-color;
+          border-radius: 50%;
         }
 
       }

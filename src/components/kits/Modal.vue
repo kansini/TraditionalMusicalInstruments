@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TmiTitle from "@/components/kits/Title.vue";
+import TmiButton from "@/components/kits/Button.vue";
 import {useCursorStore} from "@/store";
 
 const cursorState = useCursorStore()
@@ -28,16 +29,15 @@ defineProps({
           v-if="show"
       >
         <div class="tmi-modal-header">
-          <div class="tmi-modal-close"
-               @mouseenter="cursorState.setCursor('small','关')"
-               @mouseleave="cursorState.setCursor('default')"
-               @click="show = false"
-          >
-            <span>×</span>
-          </div>
+          <tmi-button
+              text="关"
+              @mouseenter="cursorState.setCursor('mini','')"
+              @mouseleave="cursorState.setCursor('default')"
+              @click="show = false"
+          />
         </div>
         <div class="tmi-modal-content">
-          <tmi-title :title="title"/>
+          <tmi-title :title="title" direction="vertical"/>
           <slot></slot>
         </div>
       </div>
@@ -53,41 +53,28 @@ defineProps({
   width: 100vw;
   height: 100vh;
   z-index: 999;
-  background: rgba(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .65);
   backdrop-filter: saturate(120%) blur(10px);
 
   .tmi-modal-header {
     width: 100%;
-    height: 40px;
+    padding: 16px;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-
-    .tmi-modal-close {
-      width: 40px;
-      height: 40px;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      cursor: pointer;
-      transition: all ease-in .3s;
-
-      &:hover {
-        transform: rotate(90deg);
-      }
-    }
   }
 
   .tmi-modal-content {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
     width: 100%;
-    height: calc(100% - 40px);
+    height: calc(100% - 72px);
+    padding: 0 40px;
     overflow-y: auto;
+    writing-mode: vertical-rl;
+    gap: 24px;
+    font-size: 18px;
   }
 }
 </style>

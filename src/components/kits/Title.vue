@@ -7,7 +7,11 @@ defineProps({
   },
   fontSize: {
     type: Number,
-    default: 32
+    default: 24
+  },
+  direction: {
+    type: String as () => 'horizontal' | 'vertical',
+    default: 'horizontal'
   }
 })
 const emit = defineEmits(['click'])
@@ -17,7 +21,7 @@ const handleClick = () => {
 </script>
 
 <template>
-  <div class="title-container">
+  <div class="title-container" :class="{ 'vertical': direction === 'vertical'}">
     <div class="title inset-circle" @click="handleClick">
       <div
           class="title-text"
@@ -35,15 +39,15 @@ const handleClick = () => {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 128px;
+    padding: 0 16px;
+    min-width: 128px;
     height: 56px;
     border-radius: 20px;
     user-select: none;
     transition: all ease-in .3s;
     cursor: pointer;
-    mix-blend-mode: soft-light;
     overflow: hidden;
-    color: #fff;
+   color:$color-light;
 
     &.inset-circle {
       background-size: 70% 70%;
@@ -76,7 +80,22 @@ const handleClick = () => {
     }
 
     .title-text {
-      //writing-mode: tb-rl;
+      letter-spacing: 8px;
+    }
+  }
+
+  &.vertical {
+    .title {
+      padding: 24px 0;
+      width: 56px;
+      min-width: 56px;
+      height: max-content;
+
+      .title-text {
+        width: 34px;
+        line-height: 1.5;
+      }
+
     }
   }
 }

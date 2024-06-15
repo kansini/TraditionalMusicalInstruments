@@ -2,9 +2,7 @@
 import {IInstrument} from "@/types/data";
 import TmiButton from "@/components/kits/Button.vue";
 import {useCurrentStore, useCursorStore} from "@/store";
-import userMotion from "../useMotion";
 
-const {motionOption} = userMotion();
 const currentState = useCurrentStore();
 const cursorState = useCursorStore();
 
@@ -42,22 +40,17 @@ const onClose = () => {
         <div class="item-title-name">{{ data.name }}</div>
         <div class="item-title-pinyin">{{ data.pinyin }}</div>
       </div>
-      <div
-            class="cate-item-desc"
-            v-if="isActive"
-            v-motion
-            :initial="motionOption.initial"
-            :enter="motionOption.enter"
-            :delay="100"
-        >
-          {{ data.desc }}
+      <transition name="fadeIn">
+        <div class="cate-item-desc" v-if="isActive">
+          <p v-for="p in data.desc">{{ p }}</p>
         </div>
+      </transition>
     </div>
     <transition name="fadeIn">
       <tmi-button
           v-if="isActive"
           class="btn-close"
-          :text="'关'"
+          text="返"
           @click="onClose"
           @mouseenter="cursorState.size='mini'"
           @mouseleave="cursorState.size='large'"
