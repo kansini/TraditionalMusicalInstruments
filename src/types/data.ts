@@ -2,6 +2,8 @@ export interface IInstrument {
     id: number;
     name: string;
     pinyin: string;
+    image: string;
+    desc?: string;
 
 }
 

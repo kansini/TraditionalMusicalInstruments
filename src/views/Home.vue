@@ -1,45 +1,41 @@
 <script lang="ts" setup>
 import {ref} from "vue";
-import TmiCategory from "@/components/Category.vue";
+import TmiCategory from "@/components/category/Category.vue";
 import TmiCursor from "@/components/kits/CustomCursor.vue";
 import TmiMenuBar from "@/components/MenuBar.vue";
-import {ICategory} from "@/types/data";
-import {bgColors} from "@/resource"
+// import TmiModal from "@/components/kits/Modal.vue"
+import {bgColors} from "@/resource";
+import {useCursorStore, useBgStore} from "@/store";
+import {IInstrument} from "@/types/data";
+const cursorState = useCursorStore();
+const bgState = useBgStore();
 
-const cursorSize = ref('large')
-const cursorInnerText = ref('樂')
-const bgIndex = ref(0)
-const playAudio = ref(false)
-const onMouseover = (item: ICategory) => {
-  playAudio.value = true
-  cursorSize.value = 'small'
-  cursorInnerText.value = item.pinyin
-  bgIndex.value = item.id
-}
 const onMouseoverMenu = (name: string) => {
-  cursorSize.value = 'small'
-  cursorInnerText.value = name
-}
-const onMouseleave = () => {
-  cursorSize.value = 'large'
-  cursorInnerText.value = '八音'
-  bgIndex.value = 0
+  cursorState.size = 'small'
+  cursorState.text = name
+};
+
+const showDetail = ref(false);
+const detailTitle = ref('')
+const onclickItem = (item: IInstrument) => {
+  showDetail.value = true;
+  detailTitle.value = item.name
 }
 </script>
 <template>
   <tmi-menu-bar @mouseenter="onMouseoverMenu"/>
   <div
       class="home"
-      @mouseenter="onMouseleave"
-      :style="{background: bgColors[bgIndex]}"
+      :style="{background: bgColors[bgState.bgIndex]}"
   >
-    <tmi-cursor :size="cursorSize" :inner-text="cursorInnerText"/>
-    <tmi-category
-        @mouseover="onMouseover"
-        @mouseleave="onMouseleave"
-    />
+    <tmi-cursor :size="cursorState.size" :inner-text="cursorState.text"/>
+    <tmi-category @click-item="onclickItem"/>
     <div class="title">\中\國\傳\統\樂\器\</div>
   </div>
+<!--  <tmi-modal-->
+<!--      v-model:show="showDetail"-->
+<!--      :title="detailTitle"-->
+<!--  />-->
 </template>
 <style lang="scss" scoped>
 .home {
@@ -53,8 +49,8 @@ const onMouseleave = () => {
   transition: all ease-in-out 1s;
 
   .title {
-    font-size: 18px;
-    letter-spacing: 24px;
+    font-size: 24px;
+    letter-spacing: 16px;
     writing-mode: vertical-rl;
     color: $primary-color;
   }

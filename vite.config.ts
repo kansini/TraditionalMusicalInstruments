@@ -29,7 +29,7 @@ export default ({mode}) => {
         server: {
             host: '0.0.0.0',
             open: false,
-            port: 8088,
+            port: 8726,
             proxy: {
                 '/api': {
                     target: 'http://127.0.0.1:7878',

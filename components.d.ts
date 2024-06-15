@@ -9,13 +9,17 @@ declare module 'vue' {
   export interface GlobalComponents {
     Animation: typeof import('./src/components/kits/Animation.vue')['default']
     Audio: typeof import('./src/components/kits/Audio.vue')['default']
-    Category: typeof import('./src/components/Category.vue')['default']
+    Button: typeof import('./src/components/kits/Button.vue')['default']
+    Category: typeof import('./src/components/category/Category.vue')['default']
     CustomCursor: typeof import('./src/components/kits/CustomCursor.vue')['default']
     FullscreenTrigger: typeof import('./src/components/kits/FullscreenTrigger.vue')['default']
     GithubIcon: typeof import('./src/components/kits/GithubIcon.vue')['default']
+    Item: typeof import('./src/components/category/Item.vue')['default']
     MenuBar: typeof import('./src/components/MenuBar.vue')['default']
+    Modal: typeof import('./src/components/kits/Modal.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SubCategory: typeof import('./src/components/SubCategory.vue')['default']
+    SubCategory: typeof import('./src/components/category/SubCategory.vue')['default']
+    Title: typeof import('./src/components/kits/Title.vue')['default']
   }
 }

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onMounted, onUnmounted, ref} from 'vue'
+import {onMounted, onUnmounted, ref} from 'vue'
 import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
 import gsap from 'gsap'
 
@@ -26,12 +26,14 @@ const onMouseMove = (e: any) => {
   gsap.to(cursorOuter.value, {
     x: e.clientX - offset,
     y: e.clientY - offset,
-    opacity: 1
+    opacity: 1,
+    duration: .3
   })
   gsap.to(cursorInner.value, {
     x: e.clientX - 4,
     y: e.clientY - 4,
-    opacity: 1
+    opacity: 1,
+    duration: .4
   })
 }
 onMounted(() => {
@@ -50,9 +52,9 @@ onUnmounted(() => {
          :class="`cursor-${size}`"
     >
       <svg viewBox="0 0 180 180" v-if="size == 'large'">
-        <path fill="transparent" id="textcircle" d="M9,90a81,81,0,1,1,81,81A81,81,0,0,1,9,90"></path>
+        <path fill="transparent" id="textCircle" d="M9,90a81,81,0,1,1,81,81A81,81,0,0,1,9,90"></path>
         <text fill="#000" dy="10">
-          <textPath href="#textcircle" textLength="500">{{ text }}</textPath>
+          <textPath href="#textCircle" textLength="500">{{ text }}</textPath>
         </text>
       </svg>
     </div>
@@ -96,7 +98,7 @@ onUnmounted(() => {
     color: rgba(255, 255, 255, 1);
     will-change: transform;
     opacity: 0;
-    font-size: 18px;
+    font-size: 14px;
     transition: width ease .6s, height ease .6s, color ease .4s;
     overflow: hidden;
     white-space: nowrap;
@@ -153,12 +155,25 @@ onUnmounted(() => {
     width: 32px;
     height: 32px;
     background: rgba(255, 0, 0, .6);
-    //mix-blend-mode: color-burn;
+    mix-blend-mode: color-burn;
   }
 
   .hidden {
     background: rgba(255, 0, 0, 0) !important;
     color: rgba(0, 0, 0, .85);
+  }
+
+  .cursor-mini {
+    display: none;
+    width: 32px;
+    height: 32px;
+
+    & + .custom-cursor-inner {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      mix-blend-mode: difference;
+    }
   }
 }
 

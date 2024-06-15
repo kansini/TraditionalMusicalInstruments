@@ -21,12 +21,12 @@
 .fadeLeft-leave-active,
 .fadeRight-enter-active,
 .fadeRight-leave-active {
-  transition: opacity .3s ease, transform .2s ease-in;
+  transition: opacity .6s ease, transform .4s ease-in;
 }
 
 .fadeRight-enter-from,
 .fadeRight-leave-to {
-  transform: translate(50%, 0);
+  transform: translate(100%, 0);
   opacity: 0;
 }
 
@@ -63,7 +63,7 @@
 
 .fadeIn-enter-active,
 .fadeIn-leave-active {
-  transition: opacity .2s ease, filter .5s ease-in;
+  transition: opacity .5s ease, filter .6s ease-in;
 }
 
 .fadeIn-enter-from,
