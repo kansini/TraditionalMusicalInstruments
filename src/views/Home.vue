@@ -29,7 +29,7 @@ const onclickItem = (item: IInstrument) => {
   >
     <tmi-cursor :size="cursorState.size" :inner-text="cursorState.text"/>
     <tmi-category @click-item="onclickItem"/>
-    <div class="title">\中\國\傳\統\樂\器\</div>
+    <div class="title">中\國\傳\統\樂\器</div>
   </div>
 </template>
 <style lang="scss" scoped>

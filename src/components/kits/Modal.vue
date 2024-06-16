@@ -53,7 +53,7 @@ defineProps({
   width: 100vw;
   height: 100vh;
   z-index: 999;
-  background: rgba(255, 255, 255, .65);
+  background: rgba(255, 255, 255, .85);
   backdrop-filter: saturate(120%) blur(10px);
 
   .tmi-modal-header {
