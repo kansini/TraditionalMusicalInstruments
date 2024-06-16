@@ -11,8 +11,8 @@ yarn dev
 ## Project preview
 
 
-![01.png](./src/assets/screenshot/01.png)
-![02.png](./src/assets/screenshot/02.png)
-![03.png](./src/assets/screenshot/03.png)
-![04.png](./src/assets/screenshot/04.png)
-![05.png](./src/assets/screenshot/05.png)
+![01.png](./screenshot/01.png)
+![02.png](./screenshot/02.png)
+![03.png](./screenshot/03.png)
+![04.png](./screenshot/04.png)
+![05.png](./screenshot/05.png)
