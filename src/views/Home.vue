@@ -25,7 +25,7 @@ const onclickItem = (item: IInstrument) => {
   <tmi-menu-bar @mouseenter="onMouseoverMenu"/>
   <div
       class="home"
-      :style="{background: bgColors[bgState.bgIndex]}"
+      :style="{background: `${bgColors[bgState.bgIndex]} no-repeat center`}"
   >
     <tmi-cursor :size="cursorState.size" :inner-text="cursorState.text"/>
     <tmi-category @click-item="onclickItem"/>
@@ -40,6 +40,8 @@ const onclickItem = (item: IInstrument) => {
   width: 100%;
   padding: 0 64px;
   height: 100vh;
+  background-image: url("../assets/img/gongche.png") !important;
+  background-size: 100% auto !important;
   transition: all ease-in-out 1s;
 
   .title {
