@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import {onMounted, onUnmounted, ref} from 'vue'
-import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
-import gsap from 'gsap'
+import {onMounted, onUnmounted, ref} from "vue";
+import {ScrollToPlugin} from "gsap/ScrollToPlugin";
+import {gsap} from "gsap";
 
 gsap.registerPlugin(ScrollToPlugin)
 
@@ -13,15 +13,15 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  size: '',
-  text: '中國傳統樂器·Traditional Musical Instruments of China·',
+  size: "",
+  text: "中國傳統樂器·Traditional Musical Instruments of China·",
   innerText: "樂",
-  color: 'rgba(104,54,26,.85)'
+  color: "rgba(104,54,26,.85)"
 })
 const cursorInner = ref(null)
 const cursorOuter = ref(null)
 const onMouseMove = (e: any) => {
-  const offset = props.size == '' ? 24 : 56
+  const offset = props.size == "" ? 24 : 56
   // cursorInner.value.style.opacity = 1
   gsap.to(cursorOuter.value, {
     x: e.clientX - offset,
@@ -37,10 +37,10 @@ const onMouseMove = (e: any) => {
   })
 }
 onMounted(() => {
-  document.addEventListener('mousemove', onMouseMove)
+  document.addEventListener("mousemove", onMouseMove)
 })
 onUnmounted(() => {
-  document.removeEventListener('mousemove', onMouseMove)
+  document.removeEventListener("mousemove", onMouseMove)
 })
 
 </script>
