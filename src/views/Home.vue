@@ -2,7 +2,7 @@
 import {ref} from "vue";
 import TmiCategory from "@/components/category/Category.vue";
 import TmiCursor from "@/components/kits/CustomCursor.vue";
-import TmiMenuBar from "@/components/MenuBar.vue";
+import TmiMenuBar from "@/components/kits/menu/MenuBar.vue";
 import {bgColors} from "@/resource";
 import {useCursorStore, useBgStore} from "@/store";
 import {IInstrument} from "@/types/data";

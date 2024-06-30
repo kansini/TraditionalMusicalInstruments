@@ -37,7 +37,7 @@ defineProps({
           />
         </div>
         <div class="tmi-modal-content">
-          <tmi-title :title="title" direction="vertical"/>
+          <tmi-title :title="title" v-if="!!title" direction="vertical"/>
           <slot></slot>
         </div>
       </div>

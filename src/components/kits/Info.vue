@@ -2,7 +2,7 @@
 import {ref} from "vue";
 import TmiModal from "./Modal.vue"
 
-const emit = defineEmits(['mouseenter'])
+const emit = defineEmits(["mouseenter"])
 
 const showModal = ref(false)
 </script>
@@ -62,6 +62,7 @@ const showModal = ref(false)
     transition: all ease-in .3s;
     cursor: pointer;
     overflow: hidden;
+
     &:hover {
       box-shadow: inset 0 0 0 2px $primary-color;
       background: transparent;
@@ -82,19 +83,21 @@ const showModal = ref(false)
   color: $primary-color;
 
   p {
-    i{
+    i {
       font-weight: 800;
-      //color: $color-light;
       background: $color-light;
       border-radius: 8px;
       padding: 8px 4px;
     }
+
     b {
       font-weight: 800;
       color: $color-light;
       background: $primary-color;
       border-radius: 50%;
-      padding: 8px;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 8px;
       margin: 0 8px 8px 8px;
     }
   }
